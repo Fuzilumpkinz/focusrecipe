@@ -3,10 +3,6 @@ import { createClient } from '@supabase/supabase-js'
 // These will be replaced with your actual Supabase credentials
 // Handle both Vite development and Cloudflare Workers environments
 const getEnvVar = (name) => {
-  // For Cloudflare Pages - use ASSETS binding first
-  if (typeof globalThis !== 'undefined' && globalThis.ASSETS && globalThis.ASSETS.env && globalThis.ASSETS.env[name]) {
-    return globalThis.ASSETS.env[name]
-  }
   // For Cloudflare Workers/ Pages
   if (typeof globalThis !== 'undefined' && globalThis.env && globalThis.env[name]) {
     return globalThis.env[name]
@@ -327,7 +323,7 @@ export const supabaseService = {
   async getFamilyMembers(familyId) {
     const { data, error } = await supabase
       .from('family_members')
-      .select(`
+        .select(`
         role,
         joined_at,
         profiles (

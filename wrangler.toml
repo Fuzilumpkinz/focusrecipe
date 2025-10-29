@@ -1,15 +1,14 @@
 name = "focusrecipe"
 compatibility_date = "2025-10-29"
+main = "src/main.jsx"
 
 [assets]
 directory = "./dist"
-binding = "ASSETS"
 
 [build]
 command = "npm run build"
 cwd = "."
 
-# Environment variables for Cloudflare Pages
 [env.production]
 name = "focusrecipe-production"
 
