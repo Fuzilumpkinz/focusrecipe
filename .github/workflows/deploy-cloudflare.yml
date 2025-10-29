@@ -35,7 +35,7 @@ jobs:
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        projectName: focus-recipe
+        projectName: focusrecipe
         directory: ./dist
         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
       if: github.ref == 'refs/heads/main'

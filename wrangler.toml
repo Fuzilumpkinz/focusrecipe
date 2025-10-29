@@ -1,4 +1,4 @@
-name = "focus-recipe"
+name = "focusrecipe"
 compatibility_date = "2025-10-29"
 main = "src/main.jsx"
 
@@ -15,7 +15,7 @@ VITE_SUPABASE_URL = "https://inuljwoghebjqacbhsjt.supabase.co"
 VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImludWxqd29naGVianFhY2Joc2p0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE1MjU1ODAsImV4cCI6MjA3NzEwMTU4MH0.LByxw46r8dd1JbfAG8kRjQmXhCQ7CsL1MlaUM9Qn5QU"
 
 [env.production]
-name = "focus-recipe-production"
+name = "focusrecipe-production"
 
 [env.preview]
-name = "focus-recipe-preview"
+name = "focusrecipe-preview"
