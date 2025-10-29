@@ -181,3 +181,5 @@ config.local.json
 
 # Git hooks
 .git/hooks/*
+
+readme.md
