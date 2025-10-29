@@ -1,26 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
-// These will be replaced with your actual Supabase credentials
-// Handle both Vite development and Cloudflare Workers environments
-const getEnvVar = (name) => {
-  // For Cloudflare Workers/ Pages
-  if (typeof globalThis !== 'undefined' && globalThis.env && globalThis.env[name]) {
-    return globalThis.env[name]
-  }
-  // For Vite development
-  if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env[name]) {
-    return import.meta.env[name]
-  }
-  // Fallback for other environments
-  return undefined
-}
-
-const supabaseUrl = getEnvVar('VITE_SUPABASE_URL')
-const supabaseAnonKey = getEnvVar('VITE_SUPABASE_ANON_KEY')
-
-// Debug environment variable access
-console.log('Environment debug - supabaseUrl:', supabaseUrl)
-console.log('Environment debug - supabaseAnonKey:', supabaseAnonKey ? `${supabaseAnonKey.substring(0, 20)}...` : 'Not set')
+// Environment variables are injected during build time for Cloudflare Pages
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 // Check if credentials are properly set
 const isValidUrl = supabaseUrl && supabaseUrl.startsWith('https://') && supabaseUrl.includes('.supabase.co')
@@ -327,7 +309,7 @@ export const supabaseService = {
   async getFamilyMembers(familyId) {
     const { data, error } = await supabase
       .from('family_members')
-        .select(`
+      .select(`
         role,
         joined_at,
         profiles (
