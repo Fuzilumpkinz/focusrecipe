@@ -1,0 +1,17 @@
+name = "focus-recipe"
+compatibility_date = "2025-10-29"
+main = "src/main.jsx"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[build]
+command = "npm run build"
+cwd = "."
+
+[env.production]
+name = "focus-recipe-production"
+
+[env.preview]
+name = "focus-recipe-preview"
