@@ -18,6 +18,10 @@ const getEnvVar = (name) => {
 const supabaseUrl = getEnvVar('VITE_SUPABASE_URL')
 const supabaseAnonKey = getEnvVar('VITE_SUPABASE_ANON_KEY')
 
+// Debug environment variable access
+console.log('Environment debug - supabaseUrl:', supabaseUrl)
+console.log('Environment debug - supabaseAnonKey:', supabaseAnonKey ? `${supabaseAnonKey.substring(0, 20)}...` : 'Not set')
+
 // Check if credentials are properly set
 const isValidUrl = supabaseUrl && supabaseUrl.startsWith('https://') && supabaseUrl.includes('.supabase.co')
 const isValidKey = supabaseAnonKey && supabaseAnonKey.length > 50 && supabaseAnonKey.startsWith('eyJ')

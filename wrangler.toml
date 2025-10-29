@@ -14,3 +14,7 @@ name = "focusrecipe-production"
 
 [env.preview]
 name = "focusrecipe-preview"
+
+[vars]
+VITE_SUPABASE_URL = "https://inuljwoghebjqacbhsjt.supabase.co"
+VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFpbHMiLCJ9.eyJpc3MiOiJzdXBhYmFwcmV0aWRhc2d0YmF0NzBqdWE5bWdyxzL0JrcIl9YXByRjQmxtbG8jMjB0ZTcwOCIsIm9hbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFpbHMiLCJ9.eyJpc3MiOiJzdXBhYmFwcmV0aWRhc2d0YmF0NzBqdWE5bWdyxzL0JrcIl9YXByRjQmxtbG8jMjB0ZTcwOCIsIm"
