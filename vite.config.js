@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
   // Use process.env.NODE_ENV to determine if we're in production
-  base: process.env.NODE_ENV === 'production' ? '/recipeApp/' : '/',
+  base: '/',
   plugins: [
     react(),
     VitePWA({
