@@ -3,9 +3,15 @@ import { createClient } from '@supabase/supabase-js'
 // These will be replaced with your actual Supabase credentials
 // Handle both Vite development and Cloudflare Workers environments
 const getEnvVar = (name) => {
-  // For Cloudflare Workers/ Pages
-  if (typeof globalThis !== 'undefined' && globalThis.env && globalThis.env[name]) {
-    return globalThis.env[name]
+  // For Cloudflare Workers/ Pages - try multiple access methods
+  if (typeof globalThis !== 'undefined') {
+    if (globalThis.env && globalThis.env[name]) {
+      return globalThis.env[name]
+    }
+    // Alternative Cloudflare Workers access
+    if (globalThis.ASSETS && globalThis.ASSETS.env && globalThis.ASSETS.env[name]) {
+      return globalThis.ASSETS.env[name]
+    }
   }
   // For Vite development
   if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env[name]) {
